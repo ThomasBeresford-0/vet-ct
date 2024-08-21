@@ -1,48 +1,43 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// src/components/CaseDetail.js
 
-const CaseDetail = () => {
-  const { caseId } = useParams(); // Get the caseId from the URL
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import './CaseDetail.css';
+
+function CaseDetail() {
+  const { caseId } = useParams();
   const [caseDetail, setCaseDetail] = useState(null);
 
   useEffect(() => {
-    const fetchCaseDetail = async () => {
-      try {
-        const response = await fetch(`https://jr-tech-test-1.vercel.app/api/cases/${caseId}`);
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const result = await response.json();
-        console.log('Fetched case detail:', result); // Debugging log
-        setCaseDetail(result.data); // Access the 'data' property
-      } catch (error) {
-        console.error('Error fetching case detail:', error);
-      }
-    };
-
-    fetchCaseDetail();
+    fetch(`https://jr-tech-test-1.vercel.app/api/cases/${caseId}`)
+      .then(response => response.json())
+      .then(data => setCaseDetail(data.data));
   }, [caseId]);
 
   if (!caseDetail) {
-    return <div>Loading...</div>; // Display loading message while data is being fetched
+    return <div>Loading...</div>;
   }
 
   return (
-    <div className="case-detail">
-      <h1>Case Key: {caseDetail.case_key}</h1>
-      <p>Patient Name: {caseDetail.patient}</p>
-      <p>Owner Name: {caseDetail.owner}</p>
-      <p>Specialty: {caseDetail.specialty}</p>
-      <p>Creation Date: {caseDetail.creation_date}</p>
-      <p>Status: {caseDetail.status}</p>
-      <p>Reporting Specialist: {caseDetail.reporting_specialist}</p>
-      <p>Species: {caseDetail.species}</p>
-      <p>Body Areas: {caseDetail.body_areas}</p>
-      <p>Turnaround: {caseDetail.turnaround}</p>
-      <p>Reported Date: {caseDetail.reported_date}</p>
-      {caseDetail.image_url && <img src={caseDetail.image_url} alt="Patient" />}
+    <div className="case-detail-container">
+      <div className="case-info">
+        <h1>{caseDetail.case_key}</h1>
+        <p><strong>Patient Name:</strong> {caseDetail.patient}</p>
+        <p><strong>Owner Name:</strong> {caseDetail.owner}</p>
+        <p><strong>Specialty:</strong> {caseDetail.specialty}</p>
+        <p><strong>Creation Date:</strong> {caseDetail.creation_date}</p>
+        <p><strong>Status:</strong> {caseDetail.status}</p>
+        <p><strong>Reporting Specialist:</strong> {caseDetail.reporting_specialist}</p>
+        <p><strong>Species:</strong> {caseDetail.species}</p>
+        <p><strong>Body Areas:</strong> {caseDetail.body_areas}</p>
+        <p><strong>Turnaround:</strong> {caseDetail.turnaround}</p>
+        <p><strong>Reported Date:</strong> {caseDetail.reported_date}</p>
+      </div>
+      <div className="case-image">
+        <img src={caseDetail.image_url} alt="Case" />
+      </div>
     </div>
   );
-};
+}
 
 export default CaseDetail;
