@@ -1,39 +1,44 @@
 /* src/components/CaseDetail.css */
 
-/* Apply PT Sans font to the entire case detail component */
-.case-detail-container, .case-info {
-  font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
-}
-
 /* Container for case detail */
 .case-detail-container {
-    display: flex;
-    flex-direction: row; /* Horizontal layout */
-    gap: 20px; /* Space between the info and image */
-    padding: 20px;
-    background-color: #f4f4f4; /* Light background color for contrast */
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  gap: 20px; /* Space between the info and image */
+  padding: 20px;
+  background-color: #f4f4f4; /* Light background color for contrast */
+  border-radius: 8px; /* Rounded corners for the container */
+  margin-bottom: 60px; /* Space for the additional information */
 }
-  
+
 /* Styles for case information */
 .case-info {
-    flex: 1; /* Takes up the remaining space */
-    background-color: #fff; /* White background for the info section */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  flex: 1; /* Takes up the remaining space */
+  background-color: #fff; /* White background for the info section */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
-  
+
 /* Styles for case image */
 .case-image {
-    flex: 1; /* Takes up the remaining space */
-    display: flex;
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
+  flex: 1; /* Takes up the remaining space */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
 }
-  
+
 .case-image img {
-    max-width: 100%; /* Responsive image width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for the image */
+  max-width: 100%; /* Responsive image width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for the image */
+}
+
+/* Styles for additional information */
+.additional-info {
+  font-size: 12px; /* Smaller font size */
+  color: #383838; /* Dark gray text color */
+  text-align: center; /* Centered text */
+  margin: 20px 0; /* Space around the info */
 }
