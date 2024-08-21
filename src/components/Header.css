@@ -1,10 +1,29 @@
-/* src/components/Header.css */
-
-.header {
-    background-color: #880837; /* Burgundy background */
-    color: #fff; /* White text color */
-    padding: 20px;
+header {
     text-align: center;
-    border-bottom: 2px solid #ddd; /* Optional: Light border for separation */
+  }
+  
+  /* Thin burgundy bar at the top */
+  .header-background-top {
+    background-color: #880837; /* Burgundy color */
+    height: 40px; /* Adjust height to make it thin */
+    width: 100%; /* Full width */
+  }
+  
+  /* Container for the logo */
+  .logo-container {
+    padding: 10px 0; /* Space above and below the logo */
+  }
+  
+  /* Styles for the logo */
+  .logo {
+    max-width: 200px; /* Adjust size as needed */
+    height: auto;
+  }
+  
+  /* Thin burgundy bar below the logo */
+  .header-background-bottom {
+    background-color: #880837; /* Burgundy color */
+    height: 40px; /* Adjust height to make it thin */
+    width: 100%; /* Full width */
   }
   

@@ -28,6 +28,7 @@ function CaseList() {
 
   return (
     <div>
+      {/* Header is added in the Header component */}
       <div className="case-list">
         {cases.map(caseItem => (
           <div key={caseItem.id} className="case-card">

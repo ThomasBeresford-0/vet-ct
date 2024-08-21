@@ -1,40 +1,24 @@
-.App {
+/* src/App.css */
+
+body {
   font-family: Arial, sans-serif;
+  background-color: #F8F8F8; /* Light gray background for the entire page */
+  color: #383838; /* Dark gray text color */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  max-width: 1200px; /* Adjust the width of the main content area */
+  margin: 0 auto; /* Center the content horizontally */
   padding: 20px;
+  background-color: #fff; /* White background for the content area */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
 }
 
-.App-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-
-.App-header img {
-  height: 50px;
-  margin-right: 20px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.pagination button {
-  padding: 10px;
-  border: none;
-  background-color: #880837;
-  color: white;
-  cursor: pointer;
-}
-
-.pagination button:disabled {
-  background-color: #ccc;
+body, html {
+  margin: 0;
+  padding: 0;
 }
