@@ -1,0 +1,10 @@
+/* src/components/Header.css */
+
+.header {
+    background-color: #880837; /* Burgundy background */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* Optional: Light border for separation */
+  }
+  
