@@ -1,4 +1,7 @@
-/* src/components/CaseList.css */
+/* Apply PT Sans font to the entire case list component */
+.case-list, .case-info, .case-detail-link, .pagination button, .pagination span {
+  font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
+}
 
 /* Grid layout for the case list */
 .case-list {
@@ -8,34 +11,41 @@
     padding: 20px;
     background-color: #f4f4f4; /* Optional: Background color for the grid */
     margin-bottom: 60px; /* Space for pagination controls */
-  }
-  
-  /* Styles for individual case cards */
-  .case-card {
+}
+
+/* Styles for individual case cards */
+.case-card {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-  }
-  
-  .case-card:hover {
+    display: flex;
+    flex-direction: column; /* Make sure the card contents stack vertically */
+    justify-content: center; /* Center contents vertically */
+    align-items: center; /* Center contents horizontally */
+    text-align: center; /* Center text horizontally */
+    padding: 20px; /* Add padding inside the card */
+}
+
+.case-card:hover {
     transform: translateY(-4px);
-  }
-  
-  /* Remove case image styling */
-  .case-image {
+}
+
+/* Remove case image styling */
+.case-image {
     display: none;
-  }
-  
-  /* Styles for the case info */
-  .case-info {
+}
+
+/* Styles for the case info */
+.case-info {
     padding: 16px;
-  }
-  
-  /* Styles for the detail link */
-  .case-detail-link {
+    text-align: center; /* Center text inside the case-info section */
+}
+
+/* Styles for the detail link */
+.case-detail-link {
     display: inline-block;
     margin-top: 8px;
     padding: 8px 12px;
@@ -43,20 +53,20 @@
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
-  }
-  
-  .case-detail-link:hover {
+}
+
+.case-detail-link:hover {
     background-color: #700a2d;
-  }
-  
-  /* Styles for the pagination controls */
-  .pagination {
+}
+
+/* Styles for the pagination controls */
+.pagination {
     display: flex;
     justify-content: center;
     margin: 20px 0;
-  }
-  
-  .pagination button {
+}
+
+.pagination button {
     background-color: #880837;
     color: #fff;
     border: none;
@@ -65,27 +75,27 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px; /* Adjust font size */
-  }
-  
-  .pagination button:disabled {
+}
+
+.pagination button:disabled {
     background-color: #ddd;
     cursor: not-allowed;
-  }
-  
-  .pagination span {
+}
+
+.pagination span {
     align-self: center;
     margin: 0 10px;
-  }
-  
-  /* Styles for the header */
-  header {
+    font-family: 'PT Sans', sans-serif; /* Apply PT Sans font to pagination text */
+}
+
+/* Styles for the header */
+header {
     text-align: center;
     margin-bottom: 20px; /* Space below the header */
-  }
-  
-  .logo {
+}
+
+.logo {
     max-width: 150px; /* Adjust size as needed */
     height: auto;
     margin-top: 10px;
-  }
-  
+}

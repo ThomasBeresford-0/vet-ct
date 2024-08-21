@@ -1,5 +1,10 @@
 /* src/components/CaseDetail.css */
 
+/* Apply PT Sans font to the entire case detail component */
+.case-detail-container, .case-info {
+  font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
+}
+
 /* Container for case detail */
 .case-detail-container {
     display: flex;
@@ -7,29 +12,28 @@
     gap: 20px; /* Space between the info and image */
     padding: 20px;
     background-color: #f4f4f4; /* Light background color for contrast */
-  }
+}
   
-  /* Styles for case information */
-  .case-info {
+/* Styles for case information */
+.case-info {
     flex: 1; /* Takes up the remaining space */
     background-color: #fff; /* White background for the info section */
     border: 1px solid #ddd; /* Light border */
     border-radius: 8px; /* Rounded corners */
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  }
+}
   
-  /* Styles for case image */
-  .case-image {
+/* Styles for case image */
+.case-image {
     flex: 1; /* Takes up the remaining space */
     display: flex;
     justify-content: center; /* Center image horizontally */
     align-items: center; /* Center image vertically */
-  }
+}
   
-  .case-image img {
+.case-image img {
     max-width: 100%; /* Responsive image width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 8px; /* Rounded corners for the image */
-  }
-  
+}
