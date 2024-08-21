@@ -1,37 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// src/components/CaseList.js
 
-const CaseList = () => {
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './CaseList.css';
+
+function CaseList() {
   const [cases, setCases] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
-    const fetchCases = async () => {
-      try {
-        const response = await fetch('https://jr-tech-test-1.vercel.app/api/cases');
-        const data = await response.json();
-        setCases(data.data); // Adjust according to the structure of the API response
-      } catch (error) {
-        console.error('Error fetching cases:', error);
-      }
-    };
+    fetch(`https://jr-tech-test-1.vercel.app/api/cases?page=${currentPage}`)
+      .then(response => response.json())
+      .then(data => {
+        setCases(data.data);
+        setTotalPages(data.totalPages);
+      });
+  }, [currentPage]);
 
-    fetchCases();
-  }, []);
+  const handlePageChange = (direction) => {
+    if (direction === 'prev' && currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    } else if (direction === 'next' && currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
 
   return (
-    <div className="case-list">
-      <h1>Case List</h1>
-      {cases.map((caseItem) => (
-        <Link to={`/cases/${caseItem.id}`} key={caseItem.id} className="case-item">
-          <h2>{caseItem.case_key}</h2>
-          <p>Patient: {caseItem.patient}</p>
-          <p>Owner: {caseItem.owner}</p>
-          <p>Specialty: {caseItem.specialty}</p>
-          <p>Creation Date: {caseItem.creation_date}</p>
-        </Link>
-      ))}
+    <div>
+      <div className="case-list">
+        {cases.map(caseItem => (
+          <div key={caseItem.id} className="case-card">
+            <div className="case-info">
+              <h2>{caseItem.case_key}</h2>
+              <p><strong>Patient Name:</strong> {caseItem.patient}</p>
+              <p><strong>Owner Name:</strong> {caseItem.owner}</p>
+              <p><strong>Specialty:</strong> {caseItem.specialty}</p>
+              <p><strong>Creation Date:</strong> {caseItem.creation_date}</p>
+              <Link to={`/cases/${caseItem.id}`} className="case-detail-link">View Details</Link>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="pagination">
+        <button onClick={() => handlePageChange('prev')} disabled={currentPage === 1}>
+          Previous
+        </button>
+        <span>Page {currentPage} of {totalPages}</span>
+        <button onClick={() => handlePageChange('next')} disabled={currentPage === totalPages}>
+          Next
+        </button>
+      </div>
     </div>
   );
-};
+}
 
 export default CaseList;
