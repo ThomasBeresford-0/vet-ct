@@ -1,0 +1,12 @@
+.case-detail {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #fafafa;
+  }
+  
+  .case-detail img {
+    max-width: 100%;
+    height: auto;
+  }
+  

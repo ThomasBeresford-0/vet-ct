@@ -1,0 +1,23 @@
+.case-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .case-list li {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .case-list img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .case-list div {
+    flex: 1;
+  }  
