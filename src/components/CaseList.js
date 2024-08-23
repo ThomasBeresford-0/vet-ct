@@ -8,6 +8,7 @@ function CaseList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortOption, setSortOption] = useState('patientNameAsc');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,13 +38,34 @@ function CaseList() {
   }, []);
 
   useEffect(() => {
-    // Update displayed cases based on current page and search term
-    const filteredCases = allCases.filter(caseItem => 
+    // Filter and sort the cases based on search term and sort option
+    let filteredCases = allCases.filter(caseItem =>
       caseItem.patient.toLowerCase().includes(searchTerm.toLowerCase()) || 
       caseItem.owner.toLowerCase().includes(searchTerm.toLowerCase())
     );
+
+    // Apply sorting based on the selected sort option
+    filteredCases = sortCases(filteredCases, sortOption);
+
     setCases(filteredCases.slice((currentPage - 1) * 10, currentPage * 10));  // Show 10 cases per page
-  }, [searchTerm, currentPage, allCases]);
+  }, [searchTerm, currentPage, allCases, sortOption]);
+
+  // Function to handle sorting logic
+  const sortCases = (cases, sortOption) => {
+    const sortedCases = [...cases];
+    switch (sortOption) {
+      case 'patientNameAsc':
+        return sortedCases.sort((a, b) => a.patient.localeCompare(b.patient));
+      case 'patientNameDesc':
+        return sortedCases.sort((a, b) => b.patient.localeCompare(a.patient));
+      case 'dateAsc':
+        return sortedCases.sort((a, b) => new Date(a.creation_date) - new Date(b.creation_date));
+      case 'dateDesc':
+        return sortedCases.sort((a, b) => new Date(b.creation_date) - new Date(a.creation_date));
+      default:
+        return sortedCases;
+    }
+  };
 
   const handlePageChange = (direction) => {
     if (direction === 'prev' && currentPage > 1) {
@@ -58,15 +80,28 @@ function CaseList() {
     setCurrentPage(1);  // Reset to first page on new search
   };
 
+  const handleSortChange = (event) => {
+    setSortOption(event.target.value);
+    setCurrentPage(1);  // Reset to first page on new sort
+  };
+
   return (
     <div>
-      <input 
-        type="text" 
-        placeholder="Search by patient or owner name..." 
-        value={searchTerm}
-        onChange={handleSearchChange}
-        className="search-bar"
-      />
+      <div className="search-and-sort-container">
+        <input 
+          type="text" 
+          placeholder="Search by patient or owner name..." 
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="search-bar"
+        />
+        <select className="sort-dropdown" value={sortOption} onChange={handleSortChange}>
+          <option value="patientNameAsc">Patient Name (A-Z)</option>
+          <option value="patientNameDesc">Patient Name (Z-A)</option>
+          <option value="dateAsc">Date (Oldest First)</option>
+          <option value="dateDesc">Date (Newest First)</option>
+        </select>
+      </div>
 
       {cases.length === 0 ? (
         <div className="empty-state">

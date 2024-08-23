@@ -1,6 +1,36 @@
 /* Apply PT Sans font to the entire case list component */
-.case-list, .case-info, .case-detail-link, .pagination button, .pagination span, .search-bar {
+.case-list, .case-info, .case-detail-link, .pagination button, .pagination span, .search-bar, .sort-dropdown {
   font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
+}
+
+/* Container for search bar and sorting dropdown */
+.search-and-sort-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  gap: 10px; /* Space between the search bar and dropdown */
+  margin: 20px auto; /* Center horizontally and add space above and below */
+  max-width: 900px; /* Max width to ensure it doesn’t stretch too much */
+}
+
+/* Search bar styling */
+.search-bar {
+  flex-grow: 1; /* Allow search bar to take up most of the space */
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  max-width: 400px; /* Set a maximum width */
+}
+
+/* Sort dropdown styling */
+.sort-dropdown {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #383838;
+  width: 220px; /* Set a fixed width if needed */
 }
 
 /* Grid layout for the case list */
@@ -105,7 +135,7 @@ header {
 .search-bar {
   display: block;
   width: 100%;
-  max-width: 400px; /* Adjust max-width as needed */
+  max-width: 700px; /* Adjust max-width as needed */
   margin: 20px auto; /* Center horizontally and add top and bottom margin */
   padding: 8px;
   border: 1px solid #ddd;
