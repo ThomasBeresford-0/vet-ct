@@ -62,11 +62,11 @@
   color: #880837; /* Burgundy color */
   font-weight: bold;
   font-size: 14px; /* Smaller font size for the heading */
-  margin: 5px 0; /* Reduced margin above and below heading */
+  margin: 1px 0; /* Reduced margin above and below heading */
 }
 
 .footer-text {
-  font-size: 11px; /* Smaller font size for the text */
+  font-size: 10px; /* Smaller font size for the text */
   margin: 0; /* Remove extra margin */
   line-height: 1.2; /* Adjust line height for better readability */
   padding-top: 0px; /* Adjust padding to reduce space */

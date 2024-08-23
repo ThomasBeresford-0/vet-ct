@@ -6,17 +6,41 @@ import './CaseList.css';
 
 function CaseList() {
   const [cases, setCases] = useState([]);
+  const [allCases, setAllCases] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch(`https://jr-tech-test-1.vercel.app/api/cases?page=${currentPage}`)
-      .then(response => response.json())
-      .then(data => {
-        setCases(data.data);
-        setTotalPages(data.totalPages);
-      });
-  }, [currentPage]);
+    const fetchData = async () => {
+      let page = 1;
+      let total = 0;
+      let casesList = [];
+
+      do {
+        const response = await fetch(`https://jr-tech-test-1.vercel.app/api/cases?page=${page}`);
+        const data = await response.json();
+        casesList = casesList.concat(data.data);
+        total = data.totalPages;
+        page++;
+      } while (page <= total);
+
+      setAllCases(casesList);
+      setCases(casesList.slice(0, 20)); // Initial page data
+      setTotalPages(total);
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    // Update displayed cases based on current page and search term
+    const filteredCases = allCases.filter(caseItem => 
+      caseItem.patient.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      caseItem.owner.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setCases(filteredCases.slice((currentPage - 1) * 20, currentPage * 20));
+  }, [searchTerm, currentPage, allCases]);
 
   const handlePageChange = (direction) => {
     if (direction === 'prev' && currentPage > 1) {
@@ -26,9 +50,20 @@ function CaseList() {
     }
   };
 
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1); // Reset to first page on new search
+  };
+
   return (
     <div>
-      {/* Header is added in the Header component */}
+      <input 
+        type="text" 
+        placeholder="Search by patient or owner name..." 
+        value={searchTerm}
+        onChange={handleSearchChange}
+        className="search-bar"
+      />
       <div className="case-list">
         {cases.map(caseItem => (
           <div key={caseItem.id} className="case-card">
@@ -47,8 +82,8 @@ function CaseList() {
         <button onClick={() => handlePageChange('prev')} disabled={currentPage === 1}>
           Previous
         </button>
-        <span>Page {currentPage} of {totalPages}</span>
-        <button onClick={() => handlePageChange('next')} disabled={currentPage === totalPages}>
+        <span>Page {currentPage} of {Math.ceil(allCases.length / 20)}</span>
+        <button onClick={() => handlePageChange('next')} disabled={currentPage === Math.ceil(allCases.length / 20)}>
           Next
         </button>
       </div>

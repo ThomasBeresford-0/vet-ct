@@ -1,6 +1,16 @@
 /* Apply PT Sans font to the entire case list component */
-.case-list, .case-info, .case-detail-link, .pagination button, .pagination span {
+.case-list, .case-info, .case-detail-link, .pagination button, .pagination span, .search-bar {
   font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
+}
+
+/* Styles for the search bar */
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 /* Grid layout for the case list */
