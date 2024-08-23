@@ -8,7 +8,7 @@ function CaseList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortOption, setSortOption] = useState('patientNameAsc');
+  const [sortOption, setSortOption] = useState('caseKeyAsc');  // Default sorting
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +26,9 @@ function CaseList() {
           page++;
         } while (page <= total);
 
+        // Sort the cases by case_key initially
+        casesList = sortCases(casesList, 'caseKeyAsc');
+        
         setAllCases(casesList);
         setCases(casesList.slice(0, 10));  // Initial page data to show 10 cases per page
         setTotalPages(total);
@@ -53,7 +56,20 @@ function CaseList() {
   // Function to handle sorting logic
   const sortCases = (cases, sortOption) => {
     const sortedCases = [...cases];
+    
     switch (sortOption) {
+      case 'caseKeyAsc':
+        return sortedCases.sort((a, b) => {
+          const numA = parseInt(a.case_key.match(/\d+/)[0], 10);
+          const numB = parseInt(b.case_key.match(/\d+/)[0], 10);
+          return numA - numB;
+        });
+      case 'caseKeyDesc':
+        return sortedCases.sort((a, b) => {
+          const numA = parseInt(a.case_key.match(/\d+/)[0], 10);
+          const numB = parseInt(b.case_key.match(/\d+/)[0], 10);
+          return numB - numA;
+        });
       case 'patientNameAsc':
         return sortedCases.sort((a, b) => a.patient.localeCompare(b.patient));
       case 'patientNameDesc':
@@ -96,6 +112,9 @@ function CaseList() {
           className="search-bar"
         />
         <select className="sort-dropdown" value={sortOption} onChange={handleSortChange}>
+          <option value="caseKeyAsc">Sort</option>
+          <option value="caseKeyAsc">Case Key (Ascending)</option>
+          <option value="caseKeyDesc">Case Key (Descending)</option>
           <option value="patientNameAsc">Patient Name (A-Z)</option>
           <option value="patientNameDesc">Patient Name (Z-A)</option>
           <option value="dateAsc">Date (Oldest First)</option>
