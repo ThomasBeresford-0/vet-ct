@@ -26,8 +26,8 @@ function CaseList() {
           page++;
         } while (page <= total);
 
-        // Sort the cases by case_key initially
-        casesList = sortCases(casesList, 'caseKeyAsc');
+        // Initially sort the cases by case_key in ascending order
+        casesList = sortCases(casesList, sortOption);
         
         setAllCases(casesList);
         setCases(casesList.slice(0, 10));  // Initial page data to show 10 cases per page
@@ -56,28 +56,18 @@ function CaseList() {
   // Function to handle sorting logic
   const sortCases = (cases, sortOption) => {
     const sortedCases = [...cases];
-    
     switch (sortOption) {
       case 'caseKeyAsc':
         return sortedCases.sort((a, b) => {
-          const numA = parseInt(a.case_key.match(/\d+/)[0], 10);
-          const numB = parseInt(b.case_key.match(/\d+/)[0], 10);
-          return numA - numB;
-        });
-      case 'caseKeyDesc':
-        return sortedCases.sort((a, b) => {
-          const numA = parseInt(a.case_key.match(/\d+/)[0], 10);
-          const numB = parseInt(b.case_key.match(/\d+/)[0], 10);
-          return numB - numA;
+          // Extract numeric part from case_key
+          const aNum = parseInt(a.case_key.replace(/^\D+/g, ''), 10);
+          const bNum = parseInt(b.case_key.replace(/^\D+/g, ''), 10);
+          return aNum - bNum;
         });
       case 'patientNameAsc':
         return sortedCases.sort((a, b) => a.patient.localeCompare(b.patient));
-      case 'patientNameDesc':
-        return sortedCases.sort((a, b) => b.patient.localeCompare(a.patient));
-      case 'dateAsc':
-        return sortedCases.sort((a, b) => new Date(a.creation_date) - new Date(b.creation_date));
-      case 'dateDesc':
-        return sortedCases.sort((a, b) => new Date(b.creation_date) - new Date(a.creation_date));
+      case 'ownerNameAsc':
+        return sortedCases.sort((a, b) => a.owner.localeCompare(b.owner));
       default:
         return sortedCases;
     }
@@ -110,15 +100,17 @@ function CaseList() {
           value={searchTerm}
           onChange={handleSearchChange}
           className="search-bar"
+          aria-label="Search cases"
         />
-        <select className="sort-dropdown" value={sortOption} onChange={handleSortChange}>
+        <select 
+          className="sort-dropdown" 
+          value={sortOption} 
+          onChange={handleSortChange}
+          aria-label="Sort cases"
+        >
           <option value="caseKeyAsc">Sort</option>
-          <option value="caseKeyAsc">Case Key (Ascending)</option>
-          <option value="caseKeyDesc">Case Key (Descending)</option>
           <option value="patientNameAsc">Patient Name (A-Z)</option>
-          <option value="patientNameDesc">Patient Name (Z-A)</option>
-          <option value="dateAsc">Date (Oldest First)</option>
-          <option value="dateDesc">Date (Newest First)</option>
+          <option value="ownerNameAsc">Owner Name (A-Z)</option>
         </select>
       </div>
 
@@ -136,7 +128,13 @@ function CaseList() {
                 <p><strong>Owner Name:</strong> {caseItem.owner}</p>
                 <p><strong>Specialty:</strong> {caseItem.specialty}</p>
                 <p><strong>Creation Date:</strong> {caseItem.creation_date}</p>
-                <Link to={`/cases/${caseItem.id}`} className="case-detail-link">View Details</Link>
+                <Link 
+                  to={`/cases/${caseItem.id}`} 
+                  className="case-detail-link"
+                  aria-label={`View details for case ${caseItem.case_key}`}
+                >
+                  View Details
+                </Link>
               </div>
             </div>
           ))}
@@ -145,11 +143,19 @@ function CaseList() {
 
       {cases.length > 0 && (
         <div className="pagination">
-          <button onClick={() => handlePageChange('prev')} disabled={currentPage === 1}>
+          <button 
+            onClick={() => handlePageChange('prev')} 
+            disabled={currentPage === 1}
+            aria-disabled={currentPage === 1}
+          >
             Previous
           </button>
           <span>Page {currentPage} of {totalPages}</span>
-          <button onClick={() => handlePageChange('next')} disabled={currentPage === totalPages}>
+          <button 
+            onClick={() => handlePageChange('next')} 
+            disabled={currentPage === totalPages}
+            aria-disabled={currentPage === totalPages}
+          >
             Next
           </button>
         </div>

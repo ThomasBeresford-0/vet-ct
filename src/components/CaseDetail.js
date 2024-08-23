@@ -34,7 +34,13 @@ function CaseDetail() {
           <p><strong>Reported Date:</strong> {caseDetail.reported_date}</p>
         </div>
         <div className="case-image">
-          <img src={caseDetail.image_url} alt="Case" />
+          {caseDetail.image_url && (
+            <img 
+              src={caseDetail.image_url} 
+              alt={`Image for case ${caseDetail.case_key}`} 
+              className="case-image"
+            />
+          )}
         </div>
       </div>
       <footer className="case-detail-footer">
