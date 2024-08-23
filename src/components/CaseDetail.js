@@ -39,17 +39,19 @@ function CaseDetail() {
         </div>
       </div>
       <footer className="case-detail-footer">
-        <img src="/assets/vetct-favicon.png" alt="VET.CT Logo" className="footer-logo" />
+        <img 
+          src="/assets/vetct-favicon.png" 
+          alt="VET.CT Favicon" 
+          className="footer-logo" 
+        />
         <div className="footer-heading">Reported by VET.CT</div>
-        <p className="footer-text">
-          t. +44 01223 790439<br />
-          www.vet-ct.com<br />
-          e. info@vet-ct.com<br />
-          <br />
-          Registered Office VET.CT, Broers Building, 21 JJ Thomson Avenue, Cambridge, CB3 0FA, United Kingdom<br />
-          <br />
-          This report is based on the available history and radiographic interpretation only and not on a physical examination of the patient. It has been prepared specifically for interpretation by the currently licensed and registered veterinary surgeon responsible for the care of this patient.
-        </p>
+        <div className="footer-text">
+          <div>t. +44 01223 790439</div>
+          <div>www.vet-ct.com</div>
+          <div>e. info@vet-ct.com</div>
+          <div>Registered Office VET.CT, Broers Building, 21 JJ Thomson Avenue, Cambridge, CB3 0FA, United Kingdom</div>
+          <div>This report is based on the available history and radiographic interpretation only and not on a physical examination of the patient. It has been prepared specifically for interpretation by the currently licensed and registered veterinary surgeon responsible for the care of this patient.</div>
+        </div>
       </footer>
     </div>
   );

@@ -16,8 +16,8 @@
 }
 
 .case-info {
-  flex: 3; /* Takes up more space than the image */
-  max-width: 600px; /* Adjusted width for better balance */
+  flex: 5; /* Takes up more space than the image */
+  max-width: 700px; /* Adjusted width for better balance */
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -27,7 +27,7 @@
 }
 
 .case-image {
-  flex: 2; /* Takes up less space than the info box */
+  flex: 4; /* Takes up less space than the info box */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,19 +36,21 @@
 .case-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 6px;
 }
 
 .case-detail-footer {
   background-color: #f4f4f4;
-  padding: 10px 0px; /* Reduced padding for a smaller footer */
+  padding: 10px; /* Increased padding for overall footer spacing */
   text-align: center;
   border-top: 1px solid #ddd;
   margin-top: auto; /* Pushes the footer to the bottom of the container */
   width: 100%; /* Full width of the container */
   box-sizing: border-box; /* Includes padding and border in the element's total width and height */
   position: relative; /* Allows adjustments to position */
-  font-size: 12px; /* Smaller font size for the footer */
+  font-size: 10px; /* Font size for the footer */
+  line-height: 1; /* Ensures no extra line spacing */
+  word-break: break-word; /* Prevents long words from causing layout issues */
 }
 
 .footer-logo {
@@ -61,13 +63,18 @@
 .footer-heading {
   color: #880837; /* Burgundy color */
   font-weight: bold;
-  font-size: 14px; /* Smaller font size for the heading */
-  margin: 1px 0; /* Reduced margin above and below heading */
+  font-size: 11px; /* Font size for the heading */
+  margin: 5px 0; /* Add vertical margin for spacing around heading */
 }
 
 .footer-text {
-  font-size: 10px; /* Smaller font size for the text */
+  font-size: 10px; /* Font size for the text */
   margin: 0; /* Remove extra margin */
-  line-height: 1.2; /* Adjust line height for better readability */
-  padding-top: 0px; /* Adjust padding to reduce space */
+  line-height: 1; /* Ensure no extra line spacing */
+  padding: 0; /* Remove extra padding */
+}
+
+.footer-text > div {
+  margin: 0; /* Ensure no additional margin */
+  padding: 0; /* Ensure no additional padding */
 }
