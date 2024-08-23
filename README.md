@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+VETCT-PROJECT
+Description
+This project is a React application for managing and viewing veterinary case reports. It provides features for listing cases, viewing detailed information, searching, sorting, and pagination. The application is designed to be user-friendly and accessible.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Installation
+To set up and run the project locally, follow these steps:
 
-## Available Scripts
+Clone the repository:
+git clone https://github.com/ThomasBeresford-0/vetct-project.git
 
-In the project directory, you can run:
+Navigate to the project directory:
+cd vetct-project
 
-### `npm start`
+Install dependencies:
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Running the Application
+To start the development server, run:
+npm start
+Open your browser and navigate to http://localhost:3000 to view the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Testing
+To run tests, use:
+npm test
+This will execute any unit and integration tests defined in the project.
 
-### `npm test`
+Accessibility Testing
+For accessibility testing:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use screen readers (e.g., NVDA, JAWS, VoiceOver) to ensure the application is navigable and usable.
+Check for color contrast, alt text for images, and keyboard navigation.
+Features Implemented
+Case List Page: Displays a paginated list of cases with sorting options.
+Case Detail Page: Shows detailed information about a selected case, including an image.
+Search: Allows users to search cases by patient name or owner name.
+Sorting: Sorts cases by patient name, owner name, or case key.
+Pagination: Enables navigation through multiple pages of cases.
+Accessibility Enhancements: Includes ARIA roles, keyboard navigation, and screen reader support.
+Additional Updates
+Implemented a dropdown box for sorting options.
+Added VET.CT information under the details page.
+Updated the favicon to match the original from VET.CT's website.
+Changed the tab content and font to align with VET.CT's branding.
+Added testing to ensure stability and functionality of the application.
+The project was implemented using JavaScript.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Future Enhancements
+Update the UI/UX for a cleaner and more intuitive experience.
+Explore options for launching this project as a mobile app.
+Conduct further testing to ensure comprehensive coverage and stability.
