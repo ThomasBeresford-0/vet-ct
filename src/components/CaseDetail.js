@@ -1,5 +1,3 @@
-// src/components/CaseDetail.js
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './CaseDetail.css';
@@ -11,7 +9,8 @@ function CaseDetail() {
   useEffect(() => {
     fetch(`https://jr-tech-test-1.vercel.app/api/cases/${caseId}`)
       .then(response => response.json())
-      .then(data => setCaseDetail(data.data));
+      .then(data => setCaseDetail(data.data))
+      .catch(error => console.error('Error fetching case details:', error));
   }, [caseId]);
 
   if (!caseDetail) {

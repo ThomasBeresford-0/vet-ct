@@ -112,3 +112,21 @@ header {
   border-radius: 4px;
   font-size: 16px; /* Adjust font size */
 }
+
+/* Empty state styling for no results */
+.empty-state {
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'PT Sans', sans-serif; /* Ensure PT Sans font is applied */
+}
+
+.empty-state p {
+  font-size: 18px;
+  color: #383838;
+  margin-top: 10px; /* Add a little space above the text */
+}
+
+.empty-state-image {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
