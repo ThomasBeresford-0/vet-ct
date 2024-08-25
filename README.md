@@ -33,22 +33,22 @@ Use screen readers (e.g., NVDA, JAWS, VoiceOver) to ensure the application is na
 Check for color contrast, alt text for images, and keyboard navigation.
 
 # Features Implemented
-Case List Page: Displays a paginated list of cases with sorting options.
-Case Detail Page: Shows detailed information about a selected case, including an image.
-Search: Allows users to search cases by patient name or owner name.
-Sorting: Sorts cases by patient name, owner name, or case key.
-Pagination: Enables navigation through multiple pages of cases.
-Accessibility Enhancements: Includes ARIA roles, keyboard navigation, and screen reader support.
+- Case List Page: Displays a paginated list of cases with sorting options.
+- Case Detail Page: Shows detailed information about a selected case, including an image.
+- Search: Allows users to search cases by patient name or owner name.
+- Sorting: Sorts cases by patient name, owner name, or case key.
+- Pagination: Enables navigation through multiple pages of cases.
+- Accessibility Enhancements: Includes ARIA roles, keyboard navigation, and screen reader support.
 
 # Additional Updates
-Implemented a dropdown box for sorting options.
-Added VET.CT information under the details page.
-Updated the favicon to match the original from VET.CT's website.
-Changed the tab content and font to align with VET.CT's branding.
-Added testing to ensure stability and functionality of the application.
-The project was implemented using JavaScript.
+- Implemented a dropdown box for sorting options.
+- Added VET.CT information under the details page.
+- Updated the favicon to match the original from VET.CT's website.
+- Changed the tab content and font to align with VET.CT's branding.
+- Added testing to ensure stability and functionality of the application.
+- The project was implemented using JavaScript.
 
 # Future Enhancements
-Update the UI/UX for a cleaner and more intuitive experience.
-Explore options for launching this project as a mobile app.
-Conduct further testing to ensure comprehensive coverage and stability.
+- Update the UI/UX for a cleaner and more intuitive experience.
+- Explore options for launching this project as a mobile app.
+- Conduct further testing to ensure comprehensive coverage and stability.
