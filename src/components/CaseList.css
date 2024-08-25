@@ -1,4 +1,3 @@
-/* Apply PT Sans font to the entire case list component */
 .case-list, .case-info, .case-detail-link, .pagination button, .pagination span, .search-bar, .sort-dropdown {
   font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
 }

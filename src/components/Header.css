@@ -1,4 +1,3 @@
-/* Make the entire header background burgundy */
 .header {
   background-color: #880837; /* Burgundy background */
   padding: 20px 0; /* Padding to give some height to the header */
@@ -7,7 +6,6 @@
   align-items: center; /* Vertically center the logo */
 }
 
-/* Crop effect by placing a smaller white background behind the logo */
 .logo-container-cropped {
   background-color: white; /* White background to make the logo stand out */
   display: inline-block; /* Ensure the container is only as wide as the logo */
@@ -16,7 +14,6 @@
   line-height: 0; /* Removes any extra spacing caused by line height */
 }
 
-/* Style the logo */
 .logo {
   height: 70px; /* Increase the height */
   width: auto; /* Keep the width proportional to the height */
