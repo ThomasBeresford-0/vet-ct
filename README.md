@@ -54,4 +54,4 @@ Check for color contrast, alt text for images, and keyboard navigation.
 - Conduct further testing to ensure comprehensive coverage and stability.
 - As VET.CT is used world wide, I could implement  multi-language support to make the application accessible to a wider audience by providing translations for different languages.
 
-(- Thank you Miranda, Mark and the VET.CT team!) 
+(Thank you Miranda, Mark and the VET.CT team!) 
