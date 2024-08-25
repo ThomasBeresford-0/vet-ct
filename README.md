@@ -1,4 +1,4 @@
-## VETCT-PROJECT
+# VETCT-PROJECT
 # Description
 
 This project is a React application for managing and viewing veterinary case reports. It provides features for listing cases, viewing detailed information, searching, sorting, and pagination. The application is designed to be user-friendly and accessible.
