@@ -5,20 +5,20 @@
 /* Container for search bar and sorting dropdown */
 .search-and-sort-container {
   display: flex;
-  align-items: center; /* Center items vertically */
-  gap: 10px; /* Space between the search bar and dropdown */
-  margin: 20px auto; /* Center horizontally and add space above and below */
-  max-width: 900px; /* Max width to ensure it doesn’t stretch too much */
+  align-items: center; 
+  gap: 10px; 
+  margin: 20px auto; 
+  max-width: 900px; 
 }
 
 /* Search bar styling */
 .search-bar {
-  flex-grow: 1; /* Allow search bar to take up most of the space */
+  flex-grow: 1; 
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
-  max-width: 400px; /* Set a maximum width */
+  max-width: 400px; 
 }
 
 /* Sort dropdown styling */
@@ -29,7 +29,7 @@
   font-size: 16px;
   background-color: #fff;
   color: #383838;
-  width: 220px; /* Set a fixed width if needed */
+  width: 220px; 
 }
 
 /* Grid layout for the case list */
@@ -38,8 +38,8 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
   padding: 20px;
-  background-color: #f4f4f4; /* Optional: Background color for the grid */
-  margin-bottom: 60px; /* Space for pagination controls */
+  background-color: #f4f4f4; 
+  margin-bottom: 60px; 
 }
 
 /* Styles for individual case cards */
@@ -51,11 +51,11 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
   display: flex;
-  flex-direction: column; /* Make sure the card contents stack vertically */
-  justify-content: center; /* Center contents vertically */
-  align-items: center; /* Center contents horizontally */
-  text-align: center; /* Center text horizontally */
-  padding: 20px; /* Add padding inside the card */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 20px; 
 }
 
 .case-card:hover {
@@ -70,19 +70,19 @@
 /* Styles for the case info */
 .case-info {
   padding: 16px;
-  text-align: center; /* Center text inside the case-info section */
+  text-align: center; 
 }
 
 /* Styles for the detail link */
 .case-detail-link {
-  display: inline-block; /* Makes the link fit its content */
-  margin-top: 16px; /* Adjust margin for spacing */
-  padding: 8px 12px; /* Adjust padding for appropriate button size */
+  display: inline-block; 
+  margin-top: 16px; 
+  padding: 8px 12px; 
   background-color: #880837;
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
-  font-size: 14px; /* Adjust font size */
+  font-size: 14px; 
 }
 
 .case-detail-link:hover {
@@ -100,11 +100,11 @@
   background-color: #880837;
   color: #fff;
   border: none;
-  padding: 8px 16px; /* Adjusted padding for appropriate button size */
-  margin: 0 8px;     /* Adjusted margin for spacing */
+  padding: 8px 16px; 
+  margin: 0 8px;    
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px; /* Adjust font size */
+  font-size: 16px; 
 }
 
 .pagination button:disabled {
@@ -115,17 +115,17 @@
 .pagination span {
   align-self: center;
   margin: 0 10px;
-  font-family: 'PT Sans', sans-serif; /* Apply PT Sans font to pagination text */
+  font-family: 'PT Sans', sans-serif; 
 }
 
 /* Styles for the header */
 header {
   text-align: center;
-  margin-bottom: 20px; /* Space below the header */
+  margin-bottom: 20px;
 }
 
 .logo {
-  max-width: 150px; /* Adjust size as needed */
+  max-width: 150px; 
   height: auto;
   margin-top: 10px;
 }
@@ -134,25 +134,25 @@ header {
 .search-bar {
   display: block;
   width: 100%;
-  max-width: 700px; /* Adjust max-width as needed */
-  margin: 20px auto; /* Center horizontally and add top and bottom margin */
+  max-width: 700px; 
+  margin: 20px auto; 
   padding: 8px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 16px; /* Adjust font size */
+  font-size: 16px;
 }
 
 /* Empty state styling for no results */
 .empty-state {
   text-align: center;
   margin-top: 40px;
-  font-family: 'PT Sans', sans-serif; /* Ensure PT Sans font is applied */
+  font-family: 'PT Sans', sans-serif; 
 }
 
 .empty-state p {
   font-size: 18px;
   color: #383838;
-  margin-top: 10px; /* Add a little space above the text */
+  margin-top: 10px; 
 }
 
 .empty-state-image {

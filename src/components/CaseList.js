@@ -8,7 +8,7 @@ function CaseList() {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortOption, setSortOption] = useState('caseKeyAsc');  // Default sorting
+  const [sortOption, setSortOption] = useState('caseKeyAsc');  
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,11 +26,10 @@ function CaseList() {
           page++;
         } while (page <= total);
 
-        // Initially sort the cases by case_key in ascending order
         casesList = sortCases(casesList, sortOption);
         
         setAllCases(casesList);
-        setCases(casesList.slice(0, 10));  // Initial page data to show 10 cases per page
+        setCases(casesList.slice(0, 10)); 
         setTotalPages(total);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -41,13 +40,13 @@ function CaseList() {
   }, []);
 
   useEffect(() => {
-    // Filter and sort the cases based on search term and sort option
+    // Filtered and sorted the cases based on search term and sort option
     let filteredCases = allCases.filter(caseItem =>
       caseItem.patient.toLowerCase().includes(searchTerm.toLowerCase()) || 
       caseItem.owner.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Apply sorting based on the selected sort option
+    // Applied sorting based on the selected sort option
     filteredCases = sortCases(filteredCases, sortOption);
 
     setCases(filteredCases.slice((currentPage - 1) * 10, currentPage * 10));  // Show 10 cases per page
@@ -83,12 +82,12 @@ function CaseList() {
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
-    setCurrentPage(1);  // Reset to first page on new search
+    setCurrentPage(1);  
   };
 
   const handleSortChange = (event) => {
     setSortOption(event.target.value);
-    setCurrentPage(1);  // Reset to first page on new sort
+    setCurrentPage(1);  
   };
 
   return (

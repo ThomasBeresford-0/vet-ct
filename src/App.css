@@ -1,19 +1,19 @@
 body {
-  font-family: 'PT Sans', sans-serif; /* Change to PT Sans font */
-  background-color: #F8F8F8; /* Light gray background for the entire page */
-  color: #383838; /* Dark gray text color */
+  font-family: 'PT Sans', sans-serif; 
+  background-color: #F8F8F8; 
+  color: #383838; 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 .App {
-  max-width: 1200px; /* Adjust the width of the main content area */
-  margin: 0 auto; /* Center the content horizontally */
+  max-width: 1200px;
+  margin: 0 auto; 
   padding: 20px;
-  background-color: #fff; /* White background for the content area */
-  border-radius: 8px; /* Optional: Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow for depth */
+  background-color: #fff; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 body, html {

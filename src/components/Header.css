@@ -1,26 +1,26 @@
 .header {
-  background-color: #880837; /* Burgundy background */
-  padding: 20px 0; /* Padding to give some height to the header */
+  background-color: #880837; 
+  padding: 20px 0; 
   display: flex;
-  justify-content: center; /* Center the logo horizontally */
-  align-items: center; /* Vertically center the logo */
+  justify-content: center; 
+  align-items: center;
 }
 
 .logo-container-cropped {
-  background-color: white; /* White background to make the logo stand out */
-  display: inline-block; /* Ensure the container is only as wide as the logo */
-  padding: 2px; /* Keep padding small for a tighter box */
-  border-radius: 20px; /* Increase the roundness for a more polished look */
-  line-height: 0; /* Removes any extra spacing caused by line height */
+  background-color: white; 
+  display: inline-block; 
+  padding: 2px; 
+  border-radius: 20px; 
+  line-height: 0; 
 }
 
 .logo {
-  height: 70px; /* Increase the height */
-  width: auto; /* Keep the width proportional to the height */
-  max-width: 200px; /* Set a longer width */
-  display: block; /* Ensures the image behaves as a block element */
-  margin: 0; /* Remove any default margins */
-  padding: 0; /* Remove any default padding */
-  border-radius: 20px; /* Add more roundness to the logo itself */
-  vertical-align: top; /* Aligns the image to the top to remove extra space */
+  height: 70px; 
+  width: auto; 
+  max-width: 200px; 
+  display: block; 
+  margin: 0; 
+  padding: 0; 
+  border-radius: 20px; 
+  vertical-align: top; 
 }
