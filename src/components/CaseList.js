@@ -40,19 +40,16 @@ function CaseList() {
   }, []);
 
   useEffect(() => {
-    // Filtered and sorted the cases based on search term and sort option
     let filteredCases = allCases.filter(caseItem =>
       caseItem.patient.toLowerCase().includes(searchTerm.toLowerCase()) || 
       caseItem.owner.toLowerCase().includes(searchTerm.toLowerCase())
     );
 
-    // Applied sorting based on the selected sort option
     filteredCases = sortCases(filteredCases, sortOption);
 
-    setCases(filteredCases.slice((currentPage - 1) * 10, currentPage * 10));  // Show 10 cases per page
+    setCases(filteredCases.slice((currentPage - 1) * 10, currentPage * 10));  
   }, [searchTerm, currentPage, allCases, sortOption]);
 
-  // Function to handle sorting logic
   const sortCases = (cases, sortOption) => {
     const sortedCases = [...cases];
     switch (sortOption) {
